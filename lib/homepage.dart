@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart'as color; 
@@ -24,10 +26,18 @@ class _HomePageState extends State<HomePage> {
         Row(
           children: [
             Text(
-              "Tanzenitsu",
+              "Tan",
               style: TextStyle(
                 fontSize: 30,
-                color: color.AppColor.homePageTitle,
+                color: Color(0xff7C0A02),
+                fontWeight: FontWeight.w700
+              ),
+              ),
+              Text(
+              "zenitsu",
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.amber,
                 fontWeight: FontWeight.w700
               ),
               ),
@@ -86,8 +96,8 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-            color.AppColor.gradientFirst.withOpacity(0.8),
-            color.AppColor.gradientSecond.withOpacity(0.9),
+            color.AppColor.gradientFirst,
+            color.AppColor.gradientSecond,
             ],
             begin: Alignment.bottomLeft,
             end:Alignment.centerRight,
@@ -109,24 +119,94 @@ class _HomePageState extends State<HomePage> {
           ]
 
         ),
-      child: Column(
-        children: [
-          Text(
-            "Next Episode",
-            style: TextStyle(
-              fontSize: 16,
-              color: color.AppColor.homePageContainerTextSmall,
+      child: Container(
+        padding: const EdgeInsets.only(left: 20,top: 20,right: 20,),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, //used for columns to make horizontal
+          children: [
+            Row(
+              children: [
+                Text(
+                  "Next",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight:FontWeight.w400 ,
+                   
+                    color: color.AppColor.homePageContainerTextSmall,
+                  ),
+                ),
+              
+            Text(
+              " Episode",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight:FontWeight.w600 ,
+                color: Colors.red,
+              ),
             ),
-          )
+            ],
+            ),
+          SizedBox(height: 5,),
+  
+  Text(
+              "Zenitsu loves",
+              style: TextStyle(
+                fontSize: 25,
+                color: color.AppColor.homePageContainerTextSmall,
+              ),
+            ),
 
+            SizedBox(height: 5,),
+  
+  Text(
+              "Nezuko Chan",
+              style: TextStyle(
+                fontSize: 25,
+                color: color.AppColor.homePageContainerTextSmall,
+              ),
+            ),
+            SizedBox(height: 25,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+               
+                Icon(Icons.timer,size: 20,color: color.AppColor.homePageContainerTextSmall,),
+               SizedBox(width: 10,),
+               Text(
+              "60 min",
+              style: TextStyle(
+                fontSize: 14,
+                color: color.AppColor.homePageContainerTextSmall,
+              ),
+            ),
+            Expanded(child: Container()),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(60),
+                boxShadow: [
+                  BoxShadow(
+                    color: color.AppColor.gradientFirst,
+                    blurRadius: 15,
+                    offset: Offset(4,2)
+                  )
+                ]
+              ),
+              child: Icon(Icons.play_circle_fill,
+              color: Colors.white,size: 60,),
+            ),
+            
+              ],
+              
+            ),
 
-      ],),     
+          
+
+            
+        ],),
+      ),     
       )
 
-        
-
-
-
+    
       
       ],
     ),
